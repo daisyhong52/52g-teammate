@@ -9,8 +9,12 @@ import Link from "next/link"
 const recruitmentData = [
   {
     label: "모집 대상",
-    content:
-      "AX사업을 함께 만들어갈 열정있는 GS그룹 구성원\n• AI/DT 역량 보유자\n• 52g 활동 경험자\n• AX 사업 확산에 기여 가능한 사내 추천자",
+    content: (
+      <>
+        <span className="font-semibold text-foreground">AX사업을 함께 만들어갈 열정있는 GS그룹 구성원</span>
+        {"\n• AI/DT 역량 보유자\n• 52g 활동 경험자\n• AX 사업 확산에 기여 가능한 사내 추천자"}
+      </>
+    ),
   },
   {
     label: "선발 인원",
@@ -18,12 +22,18 @@ const recruitmentData = [
   },
   {
     label: "파견 기간",
-    content: "2026년 1월 ~ 2027년 12월(약 2년)",
+    content: "약 2년 (내부 협의 완료 후 즉시 투입)",
   },
   {
-    label: "주요 업무",
-    content:
-      "• 계열사·외부사 대상 AX 프로젝트 코칭\n• AX커뮤니티 운영 (교육, 워크샵, 해커톤 등)\n• 현장 AX 유스케이스 분석 및 확산\n• MISO 플랫폼 개발 및 고도화\n• 버티컬 AI 애플리케이션 / SLM (경량모델) 개발\n• MISO 플랫폼 기반 사업 모델 기획 및 PoC 추진",
+    label: "모집 직무",
+    content: (
+      <>
+        <span className="font-semibold text-foreground">미소 사업 담당</span>
+        {"\n• 계열사·외부사 대상 AX 프로젝트 코칭\n• AX커뮤니티 운영 (교육, 워크샵, 해커톤 등)\n• 현장 AX 유스케이스 분석 및 확산\n• MISO 플랫폼 기반 사업 모델 기획 및 PoC 추진\n\n"}
+        <span className="font-semibold text-foreground">미소 개발 담당</span>
+        {"\n• MISO 플랫폼 개발 및 고도화(SRE)\n• 버티컬 AI 애플리케이션 / SLM (경량모델) 개발"}
+      </>
+    ),
   },
 ]
 
