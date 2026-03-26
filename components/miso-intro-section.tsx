@@ -218,7 +218,7 @@ export function MisoIntroSection() {
 
           <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
             <div
-              className={`bg-primary py-16 md:py-24 border-y-[4px] border-black transition-all duration-700 delay-150 ${
+              className={`bg-primary py-16 md:py-24 transition-all duration-700 delay-150 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >

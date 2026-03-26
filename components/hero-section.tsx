@@ -1,12 +1,23 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export function HeroSection() {
+  const [showScroll, setShowScroll] = useState(true)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScroll(window.scrollY < 100)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+    <section className="relative h-dvh flex items-center justify-center overflow-hidden bg-background">
       <div className="absolute inset-0 overflow-hidden">
         <video
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MISO%202.0-TKKkGKItTbsFDUxXwPwsIElHNvEyt6.mp4"
@@ -31,9 +42,9 @@ export function HeroSection() {
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white drop-shadow-lg px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white drop-shadow-lg px-4">
             <div className="break-keep">지금이 도전할 타이밍!</div>
-            <div className="break-keep">52g Studio 모집 </div>
+            <div className="break-keep">52g Studio 모집</div>
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed text-pretty drop-shadow-md px-4">
@@ -56,6 +67,13 @@ export function HeroSection() {
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-20 h-20 border border-white/20 rounded-full opacity-40 z-[1]" />
       <div className="absolute bottom-20 right-10 w-32 h-32 border border-white/20 rounded-full opacity-40 z-[1]" />
+
+      {/* Scroll indicator - fixed to viewport bottom, fades on scroll */}
+      <div className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-2 animate-bounce pointer-events-none transition-opacity duration-300 ${showScroll ? "opacity-100" : "opacity-0"}`}>
+        <div className="w-5 h-8 border-2 border-white/40 rounded-full flex justify-center pt-1.5">
+          <div className="w-1 h-2 bg-white/60 rounded-full" />
+        </div>
+      </div>
 
       {/* Bottom gradient divider */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent z-[1]" />

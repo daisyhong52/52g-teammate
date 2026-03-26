@@ -324,7 +324,7 @@ export function CompanyIntroSection() {
           </div>
 
           <div
-            className={`space-y-6 md:space-y-8 pt-8 md:pt-12 border-t transition-opacity duration-700 ${
+            className={`space-y-6 md:space-y-8 pt-16 md:pt-24 border-t transition-opacity duration-700 ${
               isVisible ? "opacity-100" : "opacity-0"
             }`}
           >
