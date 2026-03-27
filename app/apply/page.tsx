@@ -212,9 +212,36 @@ export default function ApplyPage() {
               <ArrowLeft className="h-4 w-4" />
               홈으로 돌아가기
             </Link>
-            <div className="flex items-center gap-2">
-              <img src="/logo.png" alt="52g Studio" className="h-6 sm:h-8 w-auto" />
-            </div>
+            {currentStep === 1 ? (
+              <Button
+                type="button"
+                size="sm"
+                onClick={handleNext}
+                disabled={!canProceedToNextStep()}
+              >
+                다음
+                <ChevronRight className="ml-1 h-4 w-4" />
+              </Button>
+            ) : (
+              <Button
+                type="button"
+                size="sm"
+                disabled={isSubmitting || isUploading}
+                onClick={() => {
+                  const form = document.querySelector("form")
+                  if (form) form.requestSubmit()
+                }}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-1 h-4 w-4 animate-spin" />
+                    제출 중...
+                  </>
+                ) : (
+                  "지원하기"
+                )}
+              </Button>
+            )}
           </div>
         </div>
       </div>

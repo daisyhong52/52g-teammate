@@ -1,3 +1,4 @@
+import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { CompanyIntroSection } from "@/components/company-intro-section"
 import { VisionSection } from "@/components/vision-section"
@@ -13,7 +14,9 @@ import { VideoIntroSection } from "@/components/video-intro-section"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <>
+    <Navigation />
+    <main className="min-h-screen pt-16">
       <HeroSection />
       <div id="company-intro">
         <CompanyIntroSection />
@@ -37,5 +40,6 @@ export default function Home() {
       <PressSection />
       <Footer />
     </main>
+    </>
   )
 }
