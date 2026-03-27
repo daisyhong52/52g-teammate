@@ -9,7 +9,7 @@ export function Footer() {
             <div className="text-sm text-muted-foreground">Copyright © 52g. All rights reserved.</div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Mail className="h-4 w-4" />
-              <span>52g Lead ally@gs.co.kr</span>
+              <span>문의(52g Lead): ally@gs.co.kr</span>
             </div>
           </div>
         </div>
